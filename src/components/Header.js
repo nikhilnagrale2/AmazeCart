@@ -40,7 +40,7 @@ function Header() {
         </div>
 
         {/* Right */}
-        <div className="text-white flex items-center text-xs space-x-6 whitespace-nowrap">
+        <div className="ml-4 text-white flex items-center text-xs space-x-6 whitespace-nowrap">
           <div
             onClick={!session ? signIn : signOut}
             className="cursor-pointer link"
@@ -52,7 +52,10 @@ function Header() {
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
 
-          <div className="cursor-pointer link">
+          <div
+            onClick={() => session && router.push("/orders")}
+            className="cursor-pointer link"
+          >
             <p>Returns</p>
             <p className="font-extrabold md:text-sm ">& Orders</p>
           </div>
